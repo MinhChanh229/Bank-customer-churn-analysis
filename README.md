@@ -19,7 +19,7 @@ Buid dashboard to track customer churn rate.
 
 ## 👣 The First Steps
 ### 📥 Data import
- First, let's import the needed libraries: Pandas, Matplotlib & Seaborn.
+First, let's import the needed libraries: Pandas, Matplotlib & Seaborn.
 ```code
 # import pandas, matplotlip, seaborn
 import pandas as pd
@@ -28,7 +28,7 @@ import seaborn as sns
 ```
 
 ### Extract data:
- Then load data from csv file.
+Then load data from csv file.
 ```code
 # load data form csv
 df = pd.read_csv('/content/Customer-Churn-Records.csv')
@@ -51,7 +51,7 @@ df.sample(10)
 
 ### Transform data:
 - Data exploration:
-  Show the columns of the dataframe and their types.
+Show the columns of the dataframe and their types.
   ```code
   df.info()
   ```
@@ -94,7 +94,7 @@ df.info()
   Convert data all object type to string type.
 
 - Basic descriptive statistics:
-  Show a descriptive statistics of the numeric columns.
+Show a descriptive statistics of the numeric columns.
 ```code
 df.describe()
 ```
@@ -108,8 +108,8 @@ df.describe()
   Point Earned: ranges from 119 to 1,000, with a relatively wide distribution.
 
 - Customer obvious analysis:
-  Boxplots to compare distributions by churn: Age, Balance, EstimatedSalary, CreditScore
-  Violin to see more about Balance vs Churn
+Boxplots to compare distributions by churn: Age, Balance, EstimatedSalary, CreditScore
+Violin to see more about Balance vs Churn
 
 
 

@@ -6,20 +6,24 @@
 Banks today are facing an increasing customer churn rate. Since the cost of acquiring new customers is often much higher than the cost of retaining existing ones, building an early warning system for customer churn can help banks reduce losses and optimize long-term profitability.
 
 - Goal of the Project:
+
 Based on the data, descriptive nalytics to understand the behavior of customers who have chunred  we will find out what causes customers to leave and then come up with appropriate strategies to help the bank.
 
 - Source:
+
 Kaggle: https://www.kaggle.com/datasets/radheshyamkollipara/bank-customer-churn/data
 Customer-Churn-Records.csv(837.42 kB)
 18 columns and 10.000 rows
 
 - Project Objective:
+
 The primary objective of this notebook is to ETL and build machine learning model to predict combine with SQL to analysis more about outliers.
 Buid dashboard to track customer churn rate.
   
 
 ## 👣 The First Steps
 ### 📥 Data import
+
 First, let's import the needed libraries: Pandas, Matplotlib & Seaborn.
 ```code
 # import pandas, matplotlip, seaborn
@@ -29,6 +33,7 @@ import seaborn as sns
 ```
 
 ### Extract data:
+
 Then load data from csv file.
 ```code
 # load data form csv
@@ -52,6 +57,7 @@ df.sample(10)
 
 ### Transform data:
 - Data exploration:
+
 Show the columns of the dataframe and their types.
   ```code
   df.info()
@@ -95,6 +101,7 @@ df.info()
   Convert data all object type to string type.
 
 - Basic descriptive statistics:
+
 Show a descriptive statistics of the numeric columns.
 ```code
 df.describe()
@@ -109,6 +116,7 @@ df.describe()
   Point Earned: ranges from 119 to 1,000, with a relatively wide distribution.
 
 - Customer obvious analysis:
+
 Boxplots to compare distributions by churn: Age, Balance, EstimatedSalary, CreditScore
 Violin to see more about Balance vs Churn
 

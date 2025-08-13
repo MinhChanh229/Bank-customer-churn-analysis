@@ -29,15 +29,42 @@ import seaborn as sns
 
 ### Extract data:
  Then load data from csv file.
+```code
+# load data form csv
+df = pd.read_csv('/content/Customer-Churn-Records.csv')
+df.head()
+```
+ <img width="1749" height="235" alt="image" src="https://github.com/user-attachments/assets/9c48a027-f54c-4315-9282-cea3cbcd14b6" />
+
+```code
+df.shape()
+```
 (10000, 18)
+
+```code
+# check random
+df.sample(10)
+```
+<img width="1766" height="416" alt="image" src="https://github.com/user-attachments/assets/9e579618-b1ff-4d1d-b3b3-6b0a82dd1846" />
+
  Great now we can see basic information about this file.
- Check randoom 10 rows.
 
 ### Transform data:
 - Data exploration:
-  Show the columns of the dataframe and their types, prevail 4 objects type (surname, geography, gender, card type)
+  Show the columns of the dataframe and their types.
+  ```code
+  df.info()
+  ```
+  <img width="484" height="508" alt="image" src="https://github.com/user-attachments/assets/d0dba80d-cdc7-4d2d-9f8e-e3e03a9738b3" />
+
+Prevailing 4 objects type (surname, geography, gender, card type)
   
 - Check missing value:
+```code
+print(df.isnull().sum())
+```
+<img width="266" height="395" alt="image" src="https://github.com/user-attachments/assets/552c50c1-0b5d-4584-9c00-1d3828edc097" />
+
   No data missing and no duplicate.
   When there are no missing values in the dataset, it usually indicates:
   1. Good data collection process
@@ -54,10 +81,25 @@ import seaborn as sns
   The system may be designed to require all fields to be filled in before saving the data.
 
 - Fix data type:
+```code
+df['Surname'] = df['Surname'].astype('string')
+df['Geography'] = df['Geography'].astype('string')
+df['Gender'] = df['Gender'].astype('string')
+df['Card Type'] = df['Card Type'].astype('string')
+# check again
+df.info()
+```
+<img width="498" height="504" alt="image" src="https://github.com/user-attachments/assets/2d06ed0a-63ca-4e6f-b454-7da7cc0b3694" />
+
   Convert data all object type to string type.
 
 - Basic descriptive statistics:
-  Show a descriptive statistics of the numeric columns
+  Show a descriptive statistics of the numeric columns.
+```code
+df.describe()
+```
+<img width="1762" height="347" alt="image" src="https://github.com/user-attachments/assets/1b5bb0f3-9e45-49c7-891d-79b09d05e8c5" />
+
   Age: ranges from 18 to 92 years old, with a median of 37
   Balance: many customers have a balance of 0 (median = 97,198.54, but 25th percentile = 0).
   NumOfProducts: most customers use 1–2 products.

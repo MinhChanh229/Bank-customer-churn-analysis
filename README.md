@@ -12,15 +12,17 @@ Based on the data, descriptive nalytics to understand the behavior of customers 
 - Source:
 
 Kaggle: https://www.kaggle.com/datasets/radheshyamkollipara/bank-customer-churn/data
+
 Customer-Churn-Records.csv(837.42 kB)
+
 18 columns and 10.000 rows
 
 - Project Objective:
 
 The primary objective of this notebook is to ETL and build machine learning model to predict combine with SQL to analysis more about outliers.
+
 Buid dashboard to track customer churn rate.
   
-
 ## 👣 The First Steps
 ### 📥 Data import
 
@@ -118,6 +120,7 @@ df.describe()
 - Customer obvious analysis:
 
 Boxplots to compare distributions by churn: Age, Balance, EstimatedSalary, CreditScore
+
 Violin to see more about Balance vs Churn
 
 

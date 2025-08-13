@@ -139,12 +139,60 @@ for col in ['Age', 'Balance', 'EstimatedSalary', 'CreditScore']:
 <img width="653" height="436" alt="image" src="https://github.com/user-attachments/assets/9c877282-2401-4bc0-9f63-0fb1246d6692" />
 
 ### Remark:
+- Boxplot age vs exited: Customers who exited (Exited = 1) tend to be older, with a higher median age compared to customers who stayed (Exited = 0). Additionally, the age range for exited customers is wider, indicating age may be a contributing factor to churn.
 
+- Boxplot balance vs exited: Customers who exited (Exited = 1) generally have a slightly higher median balance compared to those who stayed (Exited = 0). However, both groups show a wide spread of balances, indicating that balance alone may not be a strong predictor of churn.
+
+- Boxplot estimatedSalary vs exited: The distribution of estimated salaries is very similar for both customers who exited (Exited = 1) and those who stayed (Exited = 0). This suggests that estimated salary may not have a significant impact on customer churn in this dataset.
+
+- Boxplot creditscore vs exited: The credit score distributions between the exit group (Exited = 1) and the stay group (Exited = 0) are quite similar, but the exit group has more low credit scores (~350–400) which appear as outliers. The medians of the two groups are almost equal (~650 points), suggesting that CreditScore may not be a strong determinant of customer churn. However, the bottom of the boxplot for the Exited = 1 group is lower, meaning that more customers leaving are in the very low credit score group.
+
+- Outliers 
 
 Violin to see more about Balance vs Churn
+```code
+# Violin to see more about Balance vs Churn
+sns.violinplot(x='Exited', y='Balance', data=df)
+plt.title('Balance vs Churn')
+plt.xlabel('Exited')
+plt.ylabel('Balance')
+plt.show()
+```
+<img width="703" height="529" alt="image" src="https://github.com/user-attachments/assets/7f1d0614-33f4-4f63-8780-713a82b0c298" />
 
+- Heatmap
+```code
+#heatmap
+# Select only numeric columns (integers and floats)
+num_cols = df.select_dtypes(include=['int64', 'float64'])
 
+# Print the list of numerical columns
+#print("Numeric columns selected for correlation analysis:")
+#print(num_cols.columns.tolist())
 
+# Calculate Pearson correlation matrix
+corr_matrix = num_cols.corr()
+
+# Set visualization style
+sns.set(style="white")
+
+# Plot heatmap
+plt.figure(figsize=(20, 10))
+sns.heatmap(corr_matrix,
+            annot=True,
+            fmt=".2f",  # format decimal places
+            cmap="coolwarm",
+            linewidths=0.5,
+            cbar_kws={'label': 'Correlation Coefficient'})
+
+plt.title("Correlation Matrix of Numerical Features", fontsize=16, fontweight='bold')
+plt.tight_layout()
+plt.show()
+
+# Filter correlation matrix for strong correlations (> 0.7 or < -0.7)
+strong_corr = corr_matrix[((corr_matrix > 0.7) | (corr_matrix < -0.7)) & (corr_matrix != 1.0)]
+```
+<img width="1389" height="749" alt="image" src="https://github.com/user-attachments/assets/3282854d-0987-46af-9142-048296b71cc8" />
 
 
 

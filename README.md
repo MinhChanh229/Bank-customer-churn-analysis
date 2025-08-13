@@ -111,15 +111,35 @@ df.describe()
 <img width="1762" height="347" alt="image" src="https://github.com/user-attachments/assets/1b5bb0f3-9e45-49c7-891d-79b09d05e8c5" />
 
   Age: ranges from 18 to 92 years old, with a median of 37
+  
   Balance: many customers have a balance of 0 (median = 97,198.54, but 25th percentile = 0).
+  
   NumOfProducts: most customers use 1–2 products.
+  
   HasCrCard and IsActiveMember are binary variables (0 or 1).
+  
   Satisfaction Score: ranges from 1 to 5, with an average of around 3.
+  
   Point Earned: ranges from 119 to 1,000, with a relatively wide distribution.
 
 - Customer obvious analysis:
 
 Boxplots to compare distributions by churn: Age, Balance, EstimatedSalary, CreditScore
+```code
+# Boxplots to compare distributions by churn
+for col in ['Age', 'Balance', 'EstimatedSalary', 'CreditScore']:
+    plt.figure(figsize=(6, 4))
+    sns.boxplot(x='Exited', y=col, data=df)
+    plt.title(f'{col} vs. Exited')
+    plt.show()
+```
+<img width="602" height="459" alt="image" src="https://github.com/user-attachments/assets/8667d363-5105-4868-a45a-8308f76528d6" />
+<img width="639" height="448" alt="image" src="https://github.com/user-attachments/assets/6dc5bb98-e9f0-4ac2-8750-8f747e475445" />
+<img width="694" height="481" alt="image" src="https://github.com/user-attachments/assets/707423b0-ac96-451f-a318-7de66c88bb27" />
+<img width="653" height="436" alt="image" src="https://github.com/user-attachments/assets/9c877282-2401-4bc0-9f63-0fb1246d6692" />
+
+### Remark:
+
 
 Violin to see more about Balance vs Churn
 

@@ -147,7 +147,13 @@ for col in ['Age', 'Balance', 'EstimatedSalary', 'CreditScore']:
 
 - Boxplot creditscore vs exited: The credit score distributions between the exit group (Exited = 1) and the stay group (Exited = 0) are quite similar, but the exit group has more low credit scores (~350–400) which appear as outliers. The medians of the two groups are almost equal (~650 points), suggesting that CreditScore may not be a strong determinant of customer churn. However, the bottom of the boxplot for the Exited = 1 group is lower, meaning that more customers leaving are in the very low credit score group.
 
-- Outliers 
+- Outliers analysis in boxplot age:
+
+<img width="1039" height="199" alt="image" src="https://github.com/user-attachments/assets/5757f816-79a3-458e-add5-a29b6539d641" />
+
+<img width="1036" height="198" alt="image" src="https://github.com/user-attachments/assets/8e0c0f9e-7382-4dd3-8bb4-b4b965edad90" />
+
+
 
 Violin to see more about Balance vs Churn
 ```code

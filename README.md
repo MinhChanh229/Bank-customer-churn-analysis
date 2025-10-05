@@ -167,9 +167,26 @@ plt.show()
 <img width="703" height="529" alt="image" src="https://github.com/user-attachments/assets/7f1d0614-33f4-4f63-8780-713a82b0c298" />
 
 ### Remark:
+#### Analyze the relationship between Credit Score, Balance and Churn
+1. Balance vs Churn:
 - The balance distribution between  the two group is quite similar, concentrated in two main levels:
-  Balance ~ 0: Large proportion of both groups, probably less active customers.
-  Balance ~ 
+--  Balance ~ 0: Large proportion of both groups, probably less active customers.
+--  Balance ~ 100000 - 150000: Is the popular balance group.
+- The median of the group that left is sightly higher than the group that stayed. Customers with higher balances may be looking for another bank with better interest rates/offers.
+
+2. Credit score and Churn:
+- (Exited = 1) tend to have lower Credit Score than the group that stays.
+- This suggests that customers with weak credit histories are more likely to leave banks, possibly because they face financial difficulties or do not receive good credit offers.
+
+3. Combining insight:
+- Low Credit score is a big risk factor for churn.
+- High balance combined with good credit score does not necessarily retain customers, due to competition from other banks.
+- Balance = 0 group may be "hibernating" customers or customers who opened an account but did not use it, requiring a reactivation campaign.
+
+4. Suggested action:
+- Retaining customers with low credit scores: offering tailored credit products and personal financial support.
+- Maintain high balance customers: create interest rate incentives, VIP service packages to avoid losing customers to competitors.
+- Activate balance = 0 group: send incentive offers to encourage trading or depositing funds into the account.
 
 - Heatmap
 ```code

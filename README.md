@@ -166,6 +166,11 @@ plt.show()
 ```
 <img width="703" height="529" alt="image" src="https://github.com/user-attachments/assets/7f1d0614-33f4-4f63-8780-713a82b0c298" />
 
+### Remark:
+- The balance distribution between  the two group is quite similar, concentrated in two main levels:
+  Balance ~ 0: Large proportion of both groups, probably less active customers.
+  Balance ~ 
+
 - Heatmap
 ```code
 #heatmap
@@ -201,6 +206,7 @@ strong_corr = corr_matrix[((corr_matrix > 0.7) | (corr_matrix < -0.7)) & (corr_m
 <img width="1389" height="749" alt="image" src="https://github.com/user-attachments/assets/3282854d-0987-46af-9142-048296b71cc8" />
 
 
+  
 
 
 
